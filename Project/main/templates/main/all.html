@@ -1,0 +1,70 @@
+{% extends 'main/late.html'%}
+
+
+{% block form %}
+    <input type="text" placeholder="Введите название пиццы">
+    <button type="button" name="button" class="btn" >Найти</button>
+{% endblock %}
+
+
+{% block content %}
+<div class="main-block-content">
+  <aside class="filter-panel">
+    <div class="flter-box">
+        <div class="case yellow">
+            <a href="{% url 'all' %}" class="filter">Без фильтров</a><br>
+         </div>
+         <div class="case">
+            <a href="{% url 'home'%}" class="filter">Пицца</a><br>
+         </div>
+         <div class="case">
+            <a href="{% url 'combo' %}" class="filter">Комбо</a><br>
+        </div>
+        <div class="case">
+            <a href="{% url 'role' %}" class="filter">Роллы</a><br>
+        </div>
+        <div class="case">
+            <a href="{% url 'dessert' %}" class="filter">Десерты</a><br>
+        </div>
+        <div class="case">
+            <a href="{% url 'drink' %}" class="filter">Напитки</a><br>
+        </div>
+        <div class="images">
+          <img src="https://cdn.icon-icons.com/icons2/1706/PNG/96/3986693-architecture-building-culture-pizza-pizzeria-restorant-icon_112267.png" alt="">
+        </div>
+    </div>
+  </aside>
+<div class="block-content">
+
+    {% for el in object %}
+        
+        <div class="contaner" >
+
+            <div class='contaner1'>
+            <div class="img">
+                <img src="{{ el.image}}" alt="">
+            </div>
+            <div class='name'>
+                <h1>{{el.name}}</h1>
+            </div>
+            <div class='price'><p>{{el.price}} руб.</p></div>
+            <div class="text-content">
+                <p>{{ el.description}}</p>
+            </div>
+            </div>
+            <div class="button">
+                <a href="{% url "product-detail" el.id %}"><button type="button" name="button" id='{{el.id}}' class="add-to-cart">Выбрать</button></a>
+            </div>
+        </div>
+        
+    {% endfor %}
+
+
+
+</div>
+
+<div class="admin" >
+    <a href="{% url 'paneladmin' %}" class="paneladmin" >Админ</a>
+</div>
+</div>
+{% endblock %}

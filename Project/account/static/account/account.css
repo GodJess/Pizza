@@ -1,0 +1,263 @@
+body{
+    background: linear-gradient(45deg,
+    #df5b09, #d92c05
+    );
+}
+.block{
+    position: fixed;
+    top:0;
+    display: block;
+    background-color: #ffffff;
+    border: solid 2px #f2ff00;
+    width: 100%;
+    padding: 10px 15px;
+    z-index: 1;
+} .header{
+
+    display: block;
+    float: left;
+    margin-right: 500px;
+}
+h1{
+    color: black;
+    font-size: 35px;
+}
+.form form{
+    position: relative;
+    display: block;
+    width: 350px;
+    float: left;
+    margin-right: 100px;
+}
+.square{
+    display: block;
+    width: 330px;
+    height: 30px;
+    background-color: #ffffff;
+}
+input{
+    display: block;
+    float: left;
+    margin-top: 30px;
+    height: 30px;
+    justify-content: center;
+    width: 250px;
+    color: black;
+    font-size: 20px;
+    margin-right: 0,03px;
+}
+.btn{
+    display: block;
+    height: 35px;
+    width: 70px;
+    color: #ffffff;
+    background-color: black;
+    margin-top: 30px ;
+    font-size: 20px;
+}
+.list ul li {
+    position: relative;
+    display: block;
+    float: left;
+    margin-top: 15px;
+    margin-right: 30px;
+    list-style: none;
+
+}
+.list ul li a{
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+}
+.user{
+    width: 50px;
+    height: 50px;
+    margin-top: -5px;
+}
+.main{
+    position: absolute;
+    width: 100%;
+}
+
+.block-content{
+    display: flex;
+    position: relative;
+    width: 80%;
+    height: auto;
+    margin-top: 150px;
+    margin-left:400px ;
+}
+.block-aside{
+    display: flex;
+    border: 2px solid #c0c0c0;
+    background-color: #ffffff;
+    color: black;
+    width: 300px;
+    height: 600px;
+    border-radius: 30px;
+    box-shadow: 5px 10px 4px 3px #cc9a6b;
+    padding: 10px 10px  ;
+    justify-content: center;
+    align-items: center;
+}
+
+ul a {
+    text-decoration: none;
+    color: black;
+    list-style: none;
+    font-size: 25px;
+}
+a li{
+    font-size: 25px;
+    transition: all .3s ease;
+    margin-top: 30px;
+}
+
+a li:hover{
+    transform: scale(1.2);
+    color: #d92c05;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+}
+
+.blockmain{
+    display: flex;
+    float: left;
+    border: 2px solid #c0c0c0;
+    background-color: #ffffff;
+    color: black;
+    width: 800px;
+    height: 600px;
+    margin-left: 50px;
+    border-radius: 30px;
+    box-shadow: 5px 10px 4px 3px #cc9a6b;
+    padding: 10px 10px  ;
+    flex-wrap: wrap;
+}
+.logoblock{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+.img{
+    float: left;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+.FIO{
+
+    font-size: 25px;
+    color: black;
+}
+.blockplay{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: auto;
+}
+.tetris{
+    display: block;
+    width: 395px;
+    border: 2px solid silver;
+    border-radius: 30px;
+}
+.snake{
+    display: block;
+    width: 395px;
+    border: 2px solid silver;
+    border-radius: 30px;
+}
+.tetristext {
+    font-size: 25px;
+    padding: 5px;
+}
+.snaketext{
+    font-size: 25px;
+    padding: 5px;
+}
+.imgtetris{
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+}
+
+.imgsnake{
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+}
+.support{
+    display: block;
+    border: 2px solid #c0c0c0;
+    background-color: #ffffff;
+    color: black;
+    width: 300px;
+    height: 600px;
+    border-radius: 30px;
+    box-shadow: 5px 10px 4px 3px #cc9a6b;
+    padding: 10px 10px  ;
+    margin-left: 50px;
+    justify-content: center;
+    align-items: center;
+}
+h3{
+    font-size: 30px;
+    color: black;
+    width: 100%;
+    margin-bottom: 150px;
+}
+
+.block-data{
+    position: relative;
+    display: flex;
+    margin-left: 400px;
+    margin-top: 100px;
+    width: 900px;
+    height: auto;
+    background-color: #ffffff;
+    box-shadow: 5px 10px 4px 3px #cc9a6b;
+    border: 2px solid #c0c0c0;
+}
+.block-data-readonly{
+  display: block;
+  width: 50%;
+  height: auto;
+}
+.block-input-data{
+  margin-top: 20px;
+  display: block;
+  width: 50%;
+  height: auto;
+}
+.form-data{
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.input-data{
+    width: 400px;
+    height: 30px;
+    background-color: #8e8e8e7a;
+    color: #000;
+    font-size: 20px;
+}
+.btn-data{
+    margin-top: 30px;
+    width: 400px;
+    height: 35px;
+    border: 2px solid black;
+    background-color: #f3a807;
+    font-size: 20px;
+    transition: all 0.03s ease;
+}
+.btn-data:hover{
+    background-color: #d92c05;
+}

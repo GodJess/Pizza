@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="{% static "account/avtoriz.css" %}">
+  </head>
+  <body>
+    <main>
+      <div class="circle"></div>
+      <div class="register-from-container">
+        <a class="close" href="{% url 'account' %}">X</a>
+        <h1 class = "form-title">Авторизация</h1>
+         <form action="" method="post">
+            {% csrf_token %}
+        <div class="form-fields">
+          <div class="form-field">
+            <!--{{forms.login}}-->
+            <input type="text" id="name" name="login" placeholder="Введите имя">
+          </div>
+          <div class="form-field">
+           <!-- {{forms.password}}-->
+           <input type="text" id="password" name="password" placeholder="Введите пароль">
+          </div>
+          <span>{{error}}</span>
+        </div>
+        <div class="form-buttons">
+          <button type="submit" class="button"  name="button">Авторизация</button>
+          <div class="divider">или</div>
+          <a href="{% url 'register' %}" class="button button-google">Регистрация</a>
+        </form>
+        </div>
+      </div>
+    </main>
+    
+    <script>
+    </script>
+  </body>
+</html>

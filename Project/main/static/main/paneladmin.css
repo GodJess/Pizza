@@ -1,0 +1,40 @@
+body{
+     background: linear-gradient(45deg,
+    #060120, #0a46c7
+    );
+}
+.block{
+    position: absolute;
+    width: 100%;
+  }
+
+.features h1{font-size:  50px; margin-left: 32%;}
+form{
+  margin-left: 31%;
+  width: 500px;
+  margin-top: 50px;
+}
+.btn{
+    color: black;
+    background-color: aqua;
+    width: 100%;
+    font-size: 20px;
+    transition: all 0.9s ease;
+}
+.btn:hover{
+  background-color: #16b7e7;
+}
+.form-input{
+  width: 100%;
+  font-size: 20px;
+  display: block;
+  margin-bottom: 10px;
+  color: black;
+}
+.form-area{
+  width: 100%;
+  font-size: 20px;
+  display: block;
+  margin-bottom: 10px;
+  color: black;
+}

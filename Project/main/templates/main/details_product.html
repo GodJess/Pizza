@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Карта продукта</title>
+    <link rel="stylesheet" href="{% static 'main/product_cart.css' %}">
+  </head>
+  <body>
+    <div class="block-main">
+      <div class="block">
+          <div class="image">
+              <img src="{{article.image}}" alt="">
+          </div>
+          <div class="main">
+              <h1 class="name">{{article.name}}</h1>
+              <p class="description">{{article.description}}</p>
+              <form class="form" action="{% url 'add_to_cart' %}" method="post">
+                {% csrf_token %}
+                 <button type="button" id="plus" class="btn" name="button-plus">+</button>
+                  <input type="text" class="input amount" name="quantity" value="1" >
+                  <button type="button" id="minus" class="btn" name="button-minus">-</button>
+                  <input type="hidden" class="input-id" name="product_id" value="{{ article.id }}">
+                  <button type="submit" name="button" id="" class="add-to-cart">Добавить в корзину</button>
+              </form>
+          </div>
+      </div>
+    </div>
+    <script src="{% static "main/product_cart.js" %}"></script>
+  </body>
+</html>

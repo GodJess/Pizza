@@ -1,0 +1,116 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="{% static 'account/account.css' %}">
+    <link rel="stylesheet" href="{% static 'main/main.css' %}">
+  </head>
+  <body>
+    <div class="main">
+      <div class="block">
+
+          <div class="header">
+              <h1>PIZZA/SPB.RU</h1>
+          </div>
+          <div class="form">
+              <form action="">
+                <div class="square"></div>
+
+              </form>
+          </div>
+            <div class="list">
+                <ul>
+                    <li><a href="{% url 'home' %}">главная страница</a></li>
+                    <li><a href="{% url 'about' %}">о сайте</a></li>
+                    <li><a href="{% url 'cart' %}">корзина</a></li>
+                    <li><a href="{% url 'account' %}">личный кабинет</a></li>
+                    <li><a href="{% url 'avtoriz' %}"><img class="user" src="https://cdn.icon-icons.com/icons2/933/PNG/512/round-account-button-with-user-inside_icon-icons.com_72596.png"></a></li>
+                  </ul>
+            </div>
+      </div>
+      <aside class="filter-panel">
+        <div class="flter-box">
+            <div class="case">
+                <a href="{% url 'all' %}" class="filter">Без фильтров</a><br>
+             </div>
+             <div class="case">
+                <a href="{% url 'home'%}" class="filter">Пицца</a><br>
+             </div>
+             <div class="case">
+                <a href="{% url 'combo' %}" class="filter">Комбо</a><br>
+            </div>
+            <div class="case">
+                <a href="{% url 'role' %}" class="filter">Роллы</a><br>
+            </div>
+            <div class="case">
+                <a href="{% url 'dessert' %}" class="filter">Десерты</a><br>
+            </div>
+            <div class="case">
+                <a href="{% url 'drink' %}" class="filter">Напитки</a><br>
+            </div>
+            <div class="images">
+              <img src="https://cdn.icon-icons.com/icons2/1706/PNG/96/3986693-architecture-building-culture-pizza-pizzeria-restorant-icon_112267.png" alt="">
+            </div>
+        </div>
+      </aside>
+      <div class="block-content">
+
+
+            <div class="block-data">
+              <div class="block-data-readonly">
+                {% for key, value in ak.items%}
+                {% if length != 0 %}
+                {% for key, val in data.items%}
+                
+                <form class="form-data" >
+                    {% csrf_token %}
+                    <input type="text" class="name input-data" name="nameuser" value="{{val.name}}" placeholder="Имя" readonly>
+                </form>
+                <form class="form-data">
+                    {% csrf_token %}
+                    <input type="text" class="surname input-data" name="surnameuser" value="{{val.surname}}" placeholder="Фамилия ">
+                </form>
+                
+                {% endfor %}
+                {% else %}
+                <form class="form-data" >
+                  {% csrf_token %}
+                  <input type="text" class="name input-data" name="nameuser" value="{{ val.name}}" placeholder="Имя" readonly>
+                </form>
+                 <form class="form-data">
+                  {% csrf_token %}
+                  <input type="text" class="surname input-data" name="surnameuser" value="" placeholder="Фамилия ">
+                </form>
+                {% endif%}
+                <form class="form-data" action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="login" class="login input-data" value="{{value.login}}" readonly>
+                </form>
+                <form class="form-data" action="" method="post">
+                    {% csrf_token %}
+                    <input type="password" name="password"  class="password input-data" value="{{value.password}}" readonly>
+                </form>
+                <form class="form-data" action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="mail" class="mail input-data" value="{{value.mail}}" readonly>
+                </form>
+                {% endfor%}
+              </div>
+                <div class="block-input-data">
+                    <form class="" action="{% url 'add_name' %}" method="post">
+                        {% csrf_token %}
+                        <input type="text" class="name input-data" name="name" value="" placeholder="Введите имя" >
+                        <input type="text" class="surname input-data" name="surname" value="" placeholder="Введите фамилию" >
+                        <button type="submit" class="btn-data" name="button">Добавить</button>
+                    </form>
+                </div>
+            </div>
+
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </body>
+</html>

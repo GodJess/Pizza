@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Страница администратора</title>
+    <link rel="stylesheet" href="{% static 'main/paneladmin.css'%}">
+  </head>
+  <body>
+    <div class="block">
+        <div class="features">
+          <h1>Форма по добавлению пицц</h1>
+            <form  method="post">
+                {% csrf_token %}
+                {{form.image}}<br>
+                {{form.name}}<br>
+                {{form.price}}<br>
+                {{form.description}}<br>
+                {{form.category}}<br>
+                <span>{{errors}}</span>
+                <button  class="btn" type='submit' name="button">Добавить запись</button>
+            </form>
+        </div>
+    </div>
+  </body>
+</html>

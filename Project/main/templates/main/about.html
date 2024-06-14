@@ -1,0 +1,117 @@
+{% extends 'main/late.html' %}
+
+{% block form %}
+    <div class="square"></div>
+{% endblock %}
+
+{% block content %}
+<aside class="filter-panel">
+    <div class="flter-box">
+        <div class="case">
+            <a href="{% url 'all' %}" class="filter">Без фильтров</a><br>
+         </div>
+         <div class="case">
+            <a href="{% url 'home'%}" class="filter">Пицца</a><br>
+         </div>
+         <div class="case">
+            <a href="{% url 'combo' %}" class="filter">Комбо</a><br>
+        </div>
+        <div class="case">
+            <a href="{% url 'role' %}" class="filter">Роллы</a><br>
+        </div>
+        <div class="case">
+            <a href="{% url 'dessert' %}" class="filter">Десерты</a><br>
+        </div>
+        <div class="case">
+            <a href="{% url 'drink' %}" class="filter">Напитки</a><br>
+        </div>
+        <div class="images">
+          <img src="https://cdn.icon-icons.com/icons2/1706/PNG/96/3986693-architecture-building-culture-pizza-pizzeria-restorant-icon_112267.png" alt="">
+        </div>
+    </div>
+  </aside>
+    <div class="main-content">
+    <div class="content">
+        <div class="block1">
+            <img class="img-content" src="https://islam.ru/sites/default/files/img/2017/veroeshenie/piceriya.jpg" alt="">
+            <div class="text">
+                <p>Доброжаловать на страницу нашей пиццерии!</p>
+            </div>
+        </div>
+        <div class="block2">
+            <img class="img-content" src="https://img.freepik.com/premium-vector/male-chef-logo-illustration_119589-139.jpg?w=1060" alt="">
+            <div class="text">
+                <p>Мы команда профессионалов, которая с радостью готовит для вас самые вкусные и свежие пиццы.
+                   У нас вы выбор разнообразных вариантов пиццы, от классических вкусов доских сочетаний,
+                  чтобы удовлетворить любой вкус.</p>
+            </div>
+        </div>
+        <div class="block3">
+          <img class="img-content" src="https://avatars.mds.yandex.net/i?id=ce40a5e8d235eaea182549c80c99c571293d38e4-9067403-images-thumbs&n=13" alt="">
+          <div class="text">
+              <p>Наши пиццы готовятся только из натуральных ингредиентов высокого качества.
+              Мы гордимся свежестью и непревзойденным вкусом наших блюд,
+               а команда наших поваров старается создать для вас настоящие кулинарные шедевры.</p>
+          </div>
+        </div>
+        <div class="block4">
+            <img class="img-content" src="https://avatars.mds.yandex.net/i?id=984b1eaa814e5c9cbb2823f610229f7fd025bc34-9245043-images-thumbs&n=13" alt="">
+            <div class="text">
+                <p>На нашем сайте вы можете л оформить заказ онлайн и выбрать удобное время доставки или самовывоза.
+                   Мы гарантируем оперативную доставку и безупречное качество блюд.</p>
+            </div>
+        </div>
+        <div class="block5">
+            <img class="img-content" src="https://avatars.mds.yandex.net/i?id=4fdfba5a26a8547410fe7a61ba703d1bc2fe47c7-9222386-images-thumbs&n=13" alt="">
+            <div class="text">
+                <p>Готовьтесь к незабываемому вкусовому путешествию с нашими пиццами.
+                   Каждая из них - это уникальная комбинация вкусов и аат создастоение и удовлетворит даже самые изысканные вкусы.</p>
+            </div>
+        </div>
+        <div class="block6">
+            <img class="img-content" src="https://i.pinimg.com/originals/52/c9/94/52c994f8cc5458eb242564653c6a6215.jpg" alt="">
+            <div class="text">
+                <p>Мы ценим наших клиентов и стремимся предоставить им максимально комфортное и удобное обслуживание.
+                   Если у вас вопросы или пожелания, наша служба поддержки всегда готова помочь вам.</p>
+            </div>
+        </div>
+        <div class="block7">
+            <form class="form"  method="post">
+                <h3>Оставить отзыв</h3>
+                {% csrf_token %}
+                {{form.login}}<br>
+                 {{form.comment}}<br>
+                <span>{{error}}</span>
+                 <button type="submit" class="public" name="button">Опубликовать</button>
+            </form>
+        </div>
+    </div>
+    <div class="block-comment">
+      <h4>Отзывы наших покупателей</h4>
+      {% for el in object %}
+      <div class="comment">
+        <div class="main-part-comment">
+          <div class="login">
+            <img class="img-comment" src="https://cdn.icon-icons.com/icons2/1508/PNG/512/systemusers_104569.png" alt="">
+            <p>{{el.login}}</p>
+          </div>
+          <div class="text-comment">
+            <p>{{ el.comment}}</p>
+          </div>
+        </div>
+        <div class="likes">
+            <div class="block-like">
+                <input type="text" class="input-like" name="" value="1">
+                <a  type="button"><img class="like" src="https://cdn.icon-icons.com/icons2/688/PNG/96/like-thumbs-up-hand-social-media_icon-icons.com_61429.png" alt=""></a>
+            </div>
+            <div class="block-dislike">
+                <input type="text" class="input-dislike" name="" value="1">
+                <a  type="button"><img class="dislike" src="https://cdn.icon-icons.com/icons2/688/PNG/96/thumbs-down-hand-social-media-dislike_icon-icons.com_61424.png" alt=""></a>
+            </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    
+</div>
+{% endblock %}

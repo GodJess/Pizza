@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="{% static 'account/account.css' %}">
+    <link rel="stylesheet" href="{% static 'main/main.css' %}">
+  </head>
+  <body>
+    <div class="main">
+      <div class="block">
+
+          <div class="header">
+              <h1>PIZZA/SPB.RU</h1>
+          </div>
+          <div class="form">
+              <form action="">
+                <div class="square"></div>
+
+              </form>
+          </div>
+            <div class="list">
+                <ul>
+                    <li><a href="{% url 'home' %}">главная страница</a></li>
+                    <li><a href="{% url 'about' %}">о сайте</a></li>
+                    <li><a href="{% url 'cart' %}">корзина</a></li>
+                    <li><a href="{% url 'account' %}">личный кабинет</a></li>
+                    <li><a href="{% url 'avtoriz' %}"><img class="user" src="https://cdn.icon-icons.com/icons2/933/PNG/512/round-account-button-with-user-inside_icon-icons.com_72596.png"></a></li>
+                  </ul>
+            </div>
+      </div>
+      <aside class="filter-panel">
+        <div class="flter-box">
+            <div class="case">
+                <a href="{% url 'all' %}" class="filter">Без фильтров</a><br>
+             </div>
+             <div class="case">
+                <a href="{% url 'home'%}" class="filter">Пицца</a><br>
+             </div>
+             <div class="case">
+                <a href="{% url 'combo' %}" class="filter">Комбо</a><br>
+            </div>
+            <div class="case">
+                <a href="{% url 'role' %}" class="filter">Роллы</a><br>
+            </div>
+            <div class="case">
+                <a href="{% url 'dessert' %}" class="filter">Десерты</a><br>
+            </div>
+            <div class="case">
+                <a href="{% url 'drink' %}" class="filter">Напитки</a><br>
+            </div>
+            <div class="images">
+              <img src="https://cdn.icon-icons.com/icons2/1706/PNG/96/3986693-architecture-building-culture-pizza-pizzeria-restorant-icon_112267.png" alt="">
+            </div>
+        </div>
+      </aside>
+      <div class="block-content">
+        <aside class="block-aside">
+          <ul >
+            <a href="#"><li><img class="icon" src="https://cdn.icon-icons.com/icons2/1946/PNG/512/1904675-configuration-edit-gear-options-preferences-setting-settings_122525.png"> Настройки</li></a>
+            <a href="{% url 'persdata' %}"><li><img class="icon" src="https://cdn.icon-icons.com/icons2/259/PNG/128/ic_vpn_lock_128_28770.png"> Личные данные</li></a>
+            <a href="#"><li><img class="icon" src="https://cdn.icon-icons.com/icons2/1737/PNG/512/tasks_113292.png"> Заказы</li></a>
+            <a href="#"><li><img class="icon" src="https://cdn.icon-icons.com/icons2/494/PNG/512/gift_icon-icons.com_48294.png"> Бонусная система</li></a>
+          </ul>
+        </aside>
+        <div class="blockmain">
+          <div class="logoblock">
+            <img class="img" src="" alt="">
+            {% for key, value in ak.items %}
+            <p class="FIO">{{ value.login }}</p>
+            {% endfor %}
+          </div>
+          <div class="blockplay">
+            <div class="tetris">
+              <p class="tetristext">Тетрис</p>
+              <a href="{% url 'tetris' %}" ><img class="imgtetris" src="https://cdn.icon-icons.com/icons2/81/PNG/256/tetris_15552.png" alt=""></a>
+            </div>
+            <div class="snake">
+              <p class="snaketext">Змейка</p>
+              <a href="{% url 'snake' %}" ><img class="imgsnake" src="https://cdn.icon-icons.com/icons2/1465/PNG/512/492snake_100855.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="support">
+          <h3>Служба поддержки</h3>
+          <ul>
+            <a href="#"><li><img class="icon" src="https://cdn.icon-icons.com/icons2/923/PNG/256/telegram_icon-icons.com_72055.png" alt=""> Телеграм</li></a>
+            <a href="#"><li><img class="icon" src="https://cdn.icon-icons.com/icons2/2429/PNG/512/mail_ru_logo_icon_147267.png" alt=""> Майл</li></a>
+            <a href="#"><li><img class="icon" src="https://cdn.icon-icons.com/icons2/1121/PNG/512/1486147202-social-media-circled-network10_79475.png" alt=""> Вконтакте</li></a>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </body>
+</html>
